@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/loginstyle.css">
+</head>
+<body>
+    <div class="login_page">
+     <div class="login_page_bg"> 
+     <div class="container center"> 
+     <div class="login_input">
+        <div class="login_input_box">
+        <h1>Register to <span>TalkON</span></h1>
+        <p>Welcome to Virtual Speech Therapist</p>
+    <form action="" class="login_details">
+        <label for="name" class="text">Name</label><br>
+        <input type="type" placeholder="your name" name="name" class="input1" required><br>
+        <label for="aob" class="text">Date of birth</label><br>
+        <input type="date" id="dob" name="dob" class="input1" required><br>
+        <label for="email" class="text">Email</label><br>
+        <input type="email" placeholder="your-email@gmail.com" name="email" class="input1" required><br>
+        <label for="gender" class="text">Your Gender</label><br>
+        <div class="gender-container">
+        <div class="gender-option">
+            <label for="female">
+                Female
+                <input type="radio" id="female" name="gender" value="female" required>
+            </label>
+        </div>
+        <div class="gender-option">
+            <label for="male">
+                Male
+                <input type="radio" id="male" name="gender" value="male" class="option">
+            </label>
+        </div>
+        <div class="gender-option">
+            <label for="other">
+                Other
+                <input type="radio" id="other" name="gender" value="other">
+            </label>
+        </div>
+        </div>
+         <label for="phone" class="text">Phone Number</label><br>
+        <input type="tel" id="phone" name="phone" placeholder="your phone number" 
+               pattern="[0-9]{10}" class="input1" required><br>
+        <label for="password" class="text">Password</label><br>
+        <input type="password" placeholder="your password" name="password" class="input1" required><br>
+        <label for="password" class="text">Confirm Password</label><br>
+        <input type="password" placeholder="your password" name="password" class="input1" required><br>
+
+        <input type="checkbox" class="input2" >
+        <label for="checkbox" class="text2">Remember me</label>
+        <a href="#">Forget Password</a><br>
+        <button type="button">Sign up</button>
+    </form>
+        </div>
+     </div>
+     </div>  
+     </div>
+    </div>
+ 
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
