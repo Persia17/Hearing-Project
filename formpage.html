@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription form </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/loginstyle.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<div class="form_main">
+    <div class="template1_bg">
+    <div class="container center2">
+        <div class="col-md-12 ">
+        <div class="form_box">
+            <div class="box_header"></div>
+            <div class="box_details">
+            <h1>TalkON</h1>
+            <p>Virtual Speech Therapist</p>
+            <form action="" class="form-input">
+                <label for="name" class="label1">Paitent's Name</label>
+                <input type="type" placeholder="" name="name" class="input_1" required>
+                <label for="date" class="label1">Date</label>
+                <input type="date" id="date" name="id" placeholder="" class="input_2" required><br>
+                <label for="dob" class="label1">Date of birth</label>
+                <input type="date" id="dob" name="dob" class="input_3" required>
+                <label for="age" class="label1">Age</label>
+                <input type="number" id="age" name="age" class="input_4" required>
+                <label for="gender" class="label1">Gender</label>
+                <select id="gender" name="gender" class="input_5" required>
+                  <option value="">--Select--</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+                <label for="diagnosis" class="label1">Diagnosis</label>
+                <input list="diagnosis-list" id="diagnosis" name="diagnosis" placeholder="Start typing..." class="input_6" required><br>
+                
+
+<!--From Chartgpt-->
+<div class="voice-recoder">
+<h3>Voice Recorder</h3>
+  <div class="row">
+    <button id="startBtn">Start</button>
+    <button id="stopBtn" disabled>Stop</button>
+    <span id="status">Idle</span><span class="dot" id="recDot"></span>
+  </div>
+
+  <p>
+    <audio id="player" controls></audio>
+  </p>
+
+  <p>
+    <a id="downloadLink" download="recording.webm" style="display:none;">Download recording</a>
+  </p>
+
+  <script>
+    const startBtn = document.getElementById('startBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const player = document.getElementById('player');
+    const link = document.getElementById('downloadLink');
+    const status = document.getElementById('status');
+    const dot = document.getElementById('recDot');
+
+    let mediaRecorder;
+    let chunks = [];
+    let stream;
+    let mime = null;
+
+    // Pick the best available mime type
+    const candidates = [
+      'audio/webm;codecs=opus',
+      'audio/webm',
+      'audio/ogg;codecs=opus',
+      'audio/ogg',
+      'audio/mp4' // Safari (recording support varies)
+    ];
+    for (const m of candidates) {
+      if (MediaRecorder && MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(m)) {
+        mime = m; break;
+      }
+    }
+
+    function setState(state) {
+      status.textContent = state;
+      dot.style.visibility = state === 'Recording...' ? 'visible' : 'hidden';
+      startBtn.disabled = state === 'Recording...';
+      stopBtn.disabled = state !== 'Recording...';
+    }
+
+    async function startRecording() {
+      if (!navigator.mediaDevices?.getUserMedia) {
+        alert('getUserMedia not supported in this browser.');
+        return;
+      }
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
+        chunks = [];
+
+        mediaRecorder.ondataavailable = e => { if (e.data && e.data.size) chunks.push(e.data); };
+        mediaRecorder.onstop = () => {
+          const blob = new Blob(chunks, { type: mime || 'audio/webm' });
+          const url = URL.createObjectURL(blob);
+          player.src = url;
+          link.href = url;
+          // pick an appropriate file extension based on mime
+          const ext = (mime || '').includes('ogg') ? 'ogg' : (mime || '').includes('mp4') ? 'm4a' : 'webm';
+          link.download = `recording.${ext}`;
+          link.style.display = 'inline';
+          // stop mic tracks
+          stream.getTracks().forEach(t => t.stop());
+          setState('Stopped.');
+        };
+
+        mediaRecorder.start();
+        setState('Recording...');
+      } catch (err) {
+        console.error(err);
+        alert('Microphone permission denied or device not available.');
+      }
+    }
+
+    function stopRecording() {
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+      }
+    }
+
+    startBtn.addEventListener('click', startRecording);
+    stopBtn.addEventListener('click', stopRecording);
+    setState('Idle');
+  </script>
+  </div>
+            </form>
+            
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
