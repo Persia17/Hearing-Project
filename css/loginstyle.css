@@ -160,7 +160,7 @@ body {
     margin: 50px 50px;
     background-color: #faf2e5;
     box-shadow: 0 4px 16px #000;
-    height: 700px;
+    height: 750px;
     border-radius: 20px;
 
 }
@@ -299,4 +299,35 @@ button:disabled {
     display: inline-block;
     margin-left: 6px;
     visibility: hidden;
+}
+.submit_button{
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+.btn_submit{
+    padding: 10px 50px;
+    width: 40%;
+    background-color: red;
+    color: #fff;
+    font-size: 16px;
+}
+.btn_submit:hover{
+    color: #fff;
+    background-color: #5d6939;
+}
+.nav-right {
+    float: right;
+    padding-top: 15px;
+}
+.nav-right li a {
+    color: #000 !important;
+    font-size: 18px;
+    font-weight: 600;
+    
+}
+.nav-right li a:hover{
+    
+    text-shadow: 0 1px 4px red;
+    border-bottom: solid 2px red;
 }

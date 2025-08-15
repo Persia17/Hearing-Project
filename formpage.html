@@ -10,6 +10,26 @@
 
 </head>
 <body>
+     <nav class="navbar navbar-inverse header-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle nav-color" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand logo1" href="#">TalkON</a>
+      </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav nav-right">
+            <li><a class="active1" href="/home.html"><span>Home</span></a></li> 
+        <!--    <li><a href="/login.html"><button type="button" class="btn btn-danger btn1">Log in</button></a> </li>
+        <li><a href="/signup.html"><button type="button" class="btn btn-default btn2">Sign up</button></a></li>
+        -->
+        </ul>
+      </div>
+    </div>
+  </nav>
 <div class="form_main">
     <div class="template1_bg">
     <div class="container center2">
@@ -133,6 +153,9 @@
     stopBtn.addEventListener('click', stopRecording);
     setState('Idle');
   </script>
+  </div>
+  <div class="submit_button">
+  <button type="submit" class="btn_submit">Generate Your Plan</button>
   </div>
             </form>
             
