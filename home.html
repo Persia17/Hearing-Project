@@ -28,9 +28,34 @@
       </div>
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav nav-right">
-        <!--    <li><a href="/login.html"><button type="button" class="btn btn-danger btn1">Log in</button></a> </li>
-        <li><a href="/signup.html"><button type="button" class="btn btn-default btn2">Sign up</button></a></li>
-        -->
+        <li><a class="nab active1" href="home.html"><span>Home</span></a></li> 
+        <li><a class="nab" onclick="openBox()">Profile</a>
+
+  <!-- Side Box -->
+  <div id="mySideBox" class="side-box">
+    <span class="close-btn" onclick="closeBox()">&times;</span>
+    <h2>Profile</h2>
+    <div class="profile_pic">
+        <img src="image/profile-pic.png">
+    </div>
+    <div class="profile_info">
+        <h3>Prince Raj</h3>
+        <ul>
+            <li><h5>Email</h5>
+            <p>persia72211s@gmai.com</p>
+            </li>
+            <li><h5>Mobile no.</h5>
+            <p>8578954888</p>
+            </li>
+        </ul>
+    </div>
+    <div class="logout_btn">
+    <a href="index.html"><button class="btn btn-default">Log Out</button> </a>
+    </div>
+
+  </div>
+</li>
+        
         </ul>
       </div>
     </div>
@@ -41,7 +66,7 @@
         <div class="template1_details">
         <h1>Welcome To,<br> Virtual Speech Therapist</h1>
         <p>We are team of talented designers making websites</p>
-        <a href="/formpage.html"><button type="button" class="btn3" href="#">Get Started</button></a> 
+        <a href="formpage.html"><button type="button" class="btn3">Get Started</button></a> 
         </div>
     </div>
   </div>
@@ -138,6 +163,15 @@
             once: true
         });
     </script>
+    <script>
+    function openBox() {
+      document.getElementById("mySideBox").style.width = "250px";
+    }
+
+    function closeBox() {
+      document.getElementById("mySideBox").style.width = "0";
+    }
+  </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>

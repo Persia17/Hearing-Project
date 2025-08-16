@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup Side Box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* The side box (hidden by default) */
+    .side-box {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      color: white;
+    }
+
+    /* Content inside the side box */
+    .side-box a {
+      padding: 8px 16px;
+      text-decoration: none;
+      color: #f1f1f1;
+      display: block;
+      transition: 0.2s;
+    }
+
+    .side-box a:hover {
+      background: #575757;
+    }
+
+    /* Close button */
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* Open button */
+    .open-btn {
+      font-size: 18px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Open Button -->
+  <button class="open-btn" onclick="openBox()">Open Side Box</button>
+
+  <!-- Side Box -->
+  <div id="mySideBox" class="side-box">
+    <span class="close-btn" onclick="closeBox()">&times;</span>
+    <h2>Side Box Menu</h2>
+    <a href="#">Home</a>
+    <a href="#">Profile</a>
+    <a href="#">Settings</a>
+  </div>
+
+  <script>
+    function openBox() {
+      document.getElementById("mySideBox").style.width = "250px";
+    }
+
+    function closeBox() {
+      document.getElementById("mySideBox").style.width = "0";
+    }
+  </script>
+
+</body>
+</html>

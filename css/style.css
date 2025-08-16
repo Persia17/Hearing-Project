@@ -293,3 +293,92 @@ section {
     color: rgb(157, 151, 151);
     text-align: center;
 }
+.logo1 {
+    font-size: 32px;
+    color: green !important;
+    font-weight: 600;
+    outline: none;
+
+}
+
+.nav-right {
+    float: right;
+}
+
+.nab {
+    color: #000 !important;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 15px 10px;
+    border-bottom: solid 2px white;
+}
+.nab:hover{
+    transition: 0.3s ease;
+    text-shadow: 0 1px 2px black;
+    border-bottom: solid 2px red;
+}
+.active1{
+    text-shadow: 0 1px 2px black;
+    border-bottom: solid 2px red !important;
+}
+
+
+
+
+ .side-box {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      color: white;
+    }
+.side-box h2{
+    font-size: 16px;
+    padding: 10px 30px;
+    text-align: center;
+    font-weight: normal;
+
+}
+.profile_info{
+    width: 100%;
+    float: left;
+}
+.profile_info h3{
+    text-align: center;
+    color: white;
+}
+
+.logout_btn{
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-top: 20px;
+}
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .open-btn {
+      font-size: 18px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+.profile_pic{
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+.profile_pic img{
+    width: 70px;
+    border-radius: 50%;
+}
